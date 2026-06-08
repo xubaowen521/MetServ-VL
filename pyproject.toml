@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metserv-vl"
+version = "0.1.0"
+description = "Open-source benchmark and evaluation toolkit for MetServ-VL meteorological service VLMs"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Baowen Xu, Xuelei Wang, Song Gao"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.51.0",
+    "modelscope",
+    "sentence-transformers",
+    "openai>=1.0.0",
+    "rouge",
+    "sacrebleu",
+    "jieba",
+    "bert-score",
+    "nltk",
+    "pycocoevalcap",
+    "python-docx",
+    "pdfminer.six",
+    "Pillow",
+    "requests",
+    "numpy",
+]
+
+[project.optional-dependencies]
+windows = ["comtypes"]
+dev = ["pytest", "black", "flake8", "mypy"]
+
+[project.urls]
+Homepage = "https://github.com/anonymous/MetServ-VL"
+Repository = "https://github.com/anonymous/MetServ-VL"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ['py39']
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

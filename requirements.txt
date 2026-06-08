@@ -1,0 +1,30 @@
+# Core dependencies
+torch>=2.0.0
+transformers>=4.51.0
+modelscope
+sentence-transformers
+openai>=1.0.0
+
+# Traditional NLG metrics
+rouge
+sacrebleu
+jieba
+bert-score
+nltk
+pycocoevalcap
+
+# Data extraction
+python-docx
+pdfminer.six
+Pillow
+requests
+
+# Utilities
+numpy
+comtypes; platform_system=="Windows"
+
+# Development
+pytest
+black
+flake8
+mypy
